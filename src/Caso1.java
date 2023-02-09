@@ -23,6 +23,8 @@ public class Caso1 {
         ArrayList<Character> simbolos = new ArrayList<Character>();
         int longitud;
         ArrayList<String> password = new ArrayList<String>();
+        ArrayList<String> tipo = new ArrayList<String>();
+        String tipoActual;
 
 
         // Declarar listas
@@ -30,6 +32,7 @@ public class Caso1 {
         letras = InicioLetras();
         numeros = InicioNumeros();
         simbolos = InicioSimbolos();
+        tipo = tipos();
 
         System.out.println(letras.toString());
         System.out.println(numeros.toString());
@@ -37,12 +40,32 @@ public class Caso1 {
 
         // Establecer largo de lista al azar
         longitud= Longitud();
+        System.out.println("longitud = " + longitud);
 
         //Incio bucle contraseña
 
         for (int i =0; i<longitud;i++){
-
+            Collections.shuffle(tipo);
+            tipoActual = tipo.get(0);
+            switch (tipoActual) {
+                case "letra":
+                    Collections.shuffle(letras);
+                    password.add(String.valueOf(letras.get(0)));
+                    break;
+                case "numero":
+                    Collections.shuffle(numeros);
+                    password.add(String.valueOf(numeros.get(0)));
+                    break;
+                case "simbolo":
+                    Collections.shuffle(simbolos);
+                    password.add(String.valueOf(simbolos.get(0)));
+                    break;
+                default:
+                    break;
+            }
         }
+
+        System.out.println("Password: " + String.join("", password));
 
     }
 
@@ -84,8 +107,16 @@ public class Caso1 {
         }
 
         Collections.shuffle(longitudLista);
-        longitud = longitudLista(0);
+        longitud = longitudLista.get(0);
         return longitud;
 
+    }
+    private static ArrayList<String> tipos(){
+        ArrayList<String> tipo = new ArrayList<String>(); 
+        String[] tipoString ={"letra","numero","simbolo"};
+        for (int i =0; i<tipoString.length;i++){
+            tipo.add(tipoString[i]);
+        }
+        return tipo;
     }
 }
