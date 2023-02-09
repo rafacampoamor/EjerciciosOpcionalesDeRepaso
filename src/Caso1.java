@@ -21,9 +21,9 @@ public class Caso1 {
         ArrayList<Character> letras = new ArrayList<Character>();
         ArrayList<Integer> numeros = new ArrayList<Integer>();
         ArrayList<Character> simbolos = new ArrayList<Character>();
-
-        int[] longitudes = { 8, 9, 10 };
         int longitud;
+        ArrayList<String> password = new ArrayList<String>();
+
 
         // Declarar listas
 
@@ -34,6 +34,15 @@ public class Caso1 {
         System.out.println(letras.toString());
         System.out.println(numeros.toString());
         System.out.println(simbolos.toString());
+
+        // Establecer largo de lista al azar
+        longitud= Longitud();
+
+        //Incio bucle contraseña
+
+        for (int i =0; i<longitud;i++){
+
+        }
 
     }
 
@@ -64,6 +73,19 @@ public class Caso1 {
             numeros.add(i);
         }
         return numeros;
+
+    }
+    private static int Longitud() {
+        ArrayList<Integer> longitudLista = new ArrayList<Integer>();
+        int[] longitudes = { 8, 9, 10 };
+        int longitud;
+        for (int i =0; i<longitudes.length;i++) {
+            longitudLista.add(longitudes[i]);
+        }
+
+        Collections.shuffle(longitudLista);
+        longitud = longitudLista(0);
+        return longitud;
 
     }
 }
