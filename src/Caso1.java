@@ -26,7 +26,6 @@ public class Caso1 {
         ArrayList<String> tipo = new ArrayList<String>();
         String tipoActual;
 
-
         // Declarar listas
 
         letras = InicioLetras();
@@ -34,17 +33,12 @@ public class Caso1 {
         simbolos = InicioSimbolos();
         tipo = tipos();
 
-        System.out.println(letras.toString());
-        System.out.println(numeros.toString());
-        System.out.println(simbolos.toString());
-
         // Establecer largo de lista al azar
-        longitud= Longitud();
-        System.out.println("longitud = " + longitud);
+        longitud = Longitud();
 
-        //Incio bucle contraseña
+        // Incio bucle contraseña
 
-        for (int i =0; i<longitud;i++){
+        for (int i = 0; i < longitud; i++) {
             Collections.shuffle(tipo);
             tipoActual = tipo.get(0);
             switch (tipoActual) {
@@ -64,6 +58,8 @@ public class Caso1 {
                     break;
             }
         }
+
+        // impresion por pantalla de la password
 
         System.out.println("Password: " + String.join("", password));
 
@@ -90,6 +86,7 @@ public class Caso1 {
         return simbolos;
 
     }
+
     private static ArrayList<Integer> InicioNumeros() {
         ArrayList<Integer> numeros = new ArrayList<Integer>();
         for (int i = 0; i < 10; i++) {
@@ -98,11 +95,12 @@ public class Caso1 {
         return numeros;
 
     }
+
     private static int Longitud() {
         ArrayList<Integer> longitudLista = new ArrayList<Integer>();
         int[] longitudes = { 8, 9, 10 };
         int longitud;
-        for (int i =0; i<longitudes.length;i++) {
+        for (int i = 0; i < longitudes.length; i++) {
             longitudLista.add(longitudes[i]);
         }
 
@@ -111,10 +109,11 @@ public class Caso1 {
         return longitud;
 
     }
-    private static ArrayList<String> tipos(){
-        ArrayList<String> tipo = new ArrayList<String>(); 
-        String[] tipoString ={"letra","numero","simbolo"};
-        for (int i =0; i<tipoString.length;i++){
+
+    private static ArrayList<String> tipos() {
+        ArrayList<String> tipo = new ArrayList<String>();
+        String[] tipoString = { "letra", "numero", "simbolo" };
+        for (int i = 0; i < tipoString.length; i++) {
             tipo.add(tipoString[i]);
         }
         return tipo;
