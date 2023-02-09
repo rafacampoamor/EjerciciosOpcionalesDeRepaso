@@ -4,5 +4,7 @@ public class Caso2 {
          * Dado un Array bidimensional con números enteros, devolver la posición donde
          * se encuentra el número más alto.
          */
+
+         System.out.println("esto es una prueba");
     }
 }
