@@ -14,12 +14,13 @@ public class Caso3 {
          * Lola: 120,02€ (plato1 de Lola, plato2 de Lola, plato3 de Lola).
          */
 
-        int max = 3;
         ArrayList<PlatoCaso3> menu = new ArrayList<PlatoCaso3>();
         ArrayList<PersonaCaso3> personas = new ArrayList<PersonaCaso3>();
+        ArrayList<Pedido> pedido = new ArrayList<Pedido>();
+
         menu = addMenu();
         personas = addPersona();
-        pedido(personas, menu);
+        pedir(personas, menu, pedido);
     }
 
     private static ArrayList<PlatoCaso3> addMenu() {
@@ -47,45 +48,54 @@ public class Caso3 {
 
     }
 
-    private static void pedido(ArrayList<PersonaCaso3> personas, ArrayList<PlatoCaso3> menu) {
+    private static void pedir(ArrayList<PersonaCaso3> personas, ArrayList<PlatoCaso3> menu, ArrayList<Pedido> pedido) {
         int seleccion;
-        System.out.println("Quién pide?");
-        for (int i = 0; i < personas.size(); i++) {
-            System.out.println(i + " - " + personas.get(i).getNombre());
-        }
+        do {
+            System.out.println("Quién pide?");
+            for (int i = 0; i < personas.size(); i++) {
+                System.out.println(i + " - " + personas.get(i).getNombre());
+            }
+            System.out.println("3 - [Salir]");
 
-        seleccion = Utilidades.pedirInt("Selecciona un clente por su código:");
-        elegirPlato(seleccion, menu);
+            seleccion = Utilidades.pedirInt("Selecciona un cliente por su código:");
+            elegirPlato(seleccion, menu, personas, pedido);
+        } while (seleccion < personas.size());
 
     }
 
-    private static int elegirPlato(int cliente, ArrayList<PlatoCaso3> menu, ArrayList<PersonaCaso3> clientes) {
-        int seleccion = -1;
+    private static void elegirPlato(int cliente, ArrayList<PlatoCaso3> menu, ArrayList<PersonaCaso3> clientes,
+            ArrayList<Pedido> pedido) {
+        int seleccion;
 
-        do {
-            System.out.println("=== MENU ===");
-            switch (cliente) {
-                case 0:
-                    for (int i = 0; i < menu.size(); i++) {
-                        System.out.println(i + " - " + menu.get(i).getNombre());
-                    }
-                    seleccion = Utilidades.pedirInt("Elige un plato para " + clientes.get(cliente));
-                    break;
+        switch (cliente) {
+            case 0:
+                System.out.println("=== MENU ===");
+                for (int i = 0; i < menu.size(); i++) {
+                    System.out.println(i + " - " + menu.get(i).getNombre());
+                }
+                for (int i = 0; i < 3; i++) {
+                    seleccion = Utilidades.pedirInt("Elige un plato para " + clientes.get(cliente).getNombre());
+                    pedido.add(new Pedido(clientes.get(cliente), menu.get(seleccion)));
+                }
+                Utilidades.pausa();
+                break;
 
-                case 1:
-                    for (int i = 0; i < menu.size(); i++) {
-                        System.out.println(i + " - " + menu.get(i).getNombre());
-                    }
-                    seleccion = Utilidades.pedirInt("Elige un plato para " + clientes.get(cliente));
-                    break;
+            case 1:
+                System.out.println("=== MENU ===");
+                for (int i = 0; i < menu.size(); i++) {
+                    System.out.println(i + " - " + menu.get(i).getNombre());
+                }
+                for (int i = 0; i < 3; i++) {
+                    seleccion = Utilidades.pedirInt("Elige un plato para " + clientes.get(cliente).getNombre());
+                    pedido.add(new Pedido(clientes.get(cliente), menu.get(seleccion)));
+                }
+                Utilidades.pausa();
+                break;
 
-                default:
-                    System.out.println("ERROR: Número de cliente inválido");
-                    Utilidades.pausa();
-                    break;
-            }
-        } while (cliente < clientes.size());
+            default:
+                Utilidades.pausa();
+                break;
+        }
 
-        return seleccion;
     }
 }

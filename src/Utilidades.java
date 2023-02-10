@@ -22,7 +22,6 @@ public class Utilidades {
 			lector.nextLine();
 		}
 		numero = lector.nextInt();
-		lector.close();
 		return numero;
 	}
 
