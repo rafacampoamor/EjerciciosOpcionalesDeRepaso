@@ -91,7 +91,7 @@ public class Caso2 {
             if (longitud2 > 0) {
                 do {
                     if (Array2[i] == numero) {
-                        posicion = i + longitud1;
+                        posicion = i;
                         encontrado = true;
                     }
                     i++;
@@ -117,14 +117,12 @@ public class Caso2 {
         int longitud1 = Array1.length;
         int longitud2 = Array2.length;
         int i = 0;
-        int posicion = -1;
         boolean encontrado = false;
         String queArray="";
 
         if (longitud1 > 0) {
             do {
                 if (Array1[i] == (numero)) {
-                    posicion = i;
                     encontrado = true;
                     queArray = "Array 1";
                 }
@@ -137,7 +135,6 @@ public class Caso2 {
             if (longitud2 > 0) {
                 do {
                     if (Array2[i] == numero) {
-                        posicion = i + longitud1;
                         encontrado = true;
                         queArray = "Array 2";
                     }
