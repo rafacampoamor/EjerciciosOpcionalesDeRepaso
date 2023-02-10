@@ -3,6 +3,7 @@ import java.util.Arrays;
 public class Caso2 {
     public static void main(String[] args) {
         /*
+         * ENUNCIADO:
          * Dado un Array bidimensional con números enteros, devolver la posición donde
          * se encuentra el número más alto.
          */
@@ -24,10 +25,12 @@ public class Caso2 {
     }
 
     /**
-     *  Une dos arrays de números enteros en uno solo
-     * @param tamanoArray es un número entero con el tamaño que tendrá el array final
-     * @param datos1 es el primer Array a incluir
-     * @param datos2 es el segundo Array a incluir
+     * Une dos arrays de números enteros en uno solo
+     * 
+     * @param tamanoArray es un número entero con el tamaño que tendrá el array
+     *                    final
+     * @param datos1      es el primer Array a incluir
+     * @param datos2      es el segundo Array a incluir
      * @retun El Array con los números de ambos arrays.
      */
     private static int[] numerosAdd(int tamanoArray, int[] datos1, int[] datos2) {
@@ -42,11 +45,12 @@ public class Caso2 {
         return numeros;
     }
 
-   /**
-    * Ordena un array y devuelve el número más alto del mismo
-    * @param unArray el Array a ordenar
-    * @return el número más alto del array
-    */
+    /**
+     * Ordena un array y devuelve el número más alto del mismo
+     * 
+     * @param unArray el Array a ordenar
+     * @return el número más alto del array
+     */
     private static int buscarNumeroAlto(int[] unArray) {
         int max;
         Arrays.sort(unArray);
@@ -55,11 +59,14 @@ public class Caso2 {
     }
 
     /**
-     * Busca un número en dos arrays y devuelve la posición en la que lo ha encontrado
+     * Busca un número en dos arrays y devuelve la posición en la que lo ha
+     * encontrado
+     * 
      * @param Array1 el primer array en el que buscar el número
      * @param Array2 el segundo array en el que buscar el número
      * @param numero el número a buscar
-     * @return la posición en la que se en cuentra el número (-1 en caso de que no exista)
+     * @return la posición en la que se en cuentra el número (-1 en caso de que no
+     *         exista)
      */
     private static int buscarPosicionNumero(int[] Array1, int[] Array2, int numero) {
 
@@ -98,10 +105,12 @@ public class Caso2 {
 
     /**
      * Busca en qué Array se encuenta un número concreto
+     * 
      * @param Array1 el primer array en el que buscar el número
      * @param Array2 el segundo array en el que buscar el número
      * @param numero el número a buscar
-    * @return devuelve el String con el nombre del Array en el que se encontraba el número (nulo en caso de no existir)
+     * @return devuelve el String con el nombre del Array en el que se encontraba el
+     *         número (nulo en caso de no existir)
      */
     private static String buscarArrayNumero(int[] Array1, int[] Array2, int numero) {
 
