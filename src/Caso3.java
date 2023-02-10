@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Caso3 {
     public static void main(String[] args) {
         /*
@@ -11,5 +13,79 @@ public class Caso3 {
          * Pepe: 112,56€ (plato1 de Pepe, plato2 de Pepe, plato3 de Pepe).
          * Lola: 120,02€ (plato1 de Lola, plato2 de Lola, plato3 de Lola).
          */
+
+        int max = 3;
+        ArrayList<PlatoCaso3> menu = new ArrayList<PlatoCaso3>();
+        ArrayList<PersonaCaso3> personas = new ArrayList<PersonaCaso3>();
+        menu = addMenu();
+        personas = addPersona();
+        pedido(personas, menu);
+    }
+
+    private static ArrayList<PlatoCaso3> addMenu() {
+        ArrayList<PlatoCaso3> menu = new ArrayList<PlatoCaso3>();
+        menu.add(new PlatoCaso3("Spaghetti", 30));
+        menu.add(new PlatoCaso3("Sopa", 25));
+        menu.add(new PlatoCaso3("Ensalada", 20));
+        menu.add(new PlatoCaso3("Pollo", 25));
+        menu.add(new PlatoCaso3("Pescado", 27));
+        menu.add(new PlatoCaso3("Ternera", 33));
+        menu.add(new PlatoCaso3("Pudding", 15));
+        menu.add(new PlatoCaso3("Helado", 14));
+        menu.add(new PlatoCaso3("Fruta", 9));
+
+        return menu;
+    }
+
+    private static ArrayList<PersonaCaso3> addPersona() {
+        ArrayList<PersonaCaso3> personas = new ArrayList<PersonaCaso3>();
+
+        personas.add(new PersonaCaso3("Pepe"));
+        personas.add(new PersonaCaso3("Lola"));
+
+        return personas;
+
+    }
+
+    private static void pedido(ArrayList<PersonaCaso3> personas, ArrayList<PlatoCaso3> menu) {
+        int seleccion;
+        System.out.println("Quién pide?");
+        for (int i = 0; i < personas.size(); i++) {
+            System.out.println(i + " - " + personas.get(i).getNombre());
+        }
+
+        seleccion = Utilidades.pedirInt("Selecciona un clente por su código:");
+        elegirPlato(seleccion, menu);
+
+    }
+
+    private static int elegirPlato(int cliente, ArrayList<PlatoCaso3> menu, ArrayList<PersonaCaso3> clientes) {
+        int seleccion = -1;
+
+        do {
+            System.out.println("=== MENU ===");
+            switch (cliente) {
+                case 0:
+                    for (int i = 0; i < menu.size(); i++) {
+                        System.out.println(i + " - " + menu.get(i).getNombre());
+                    }
+                    seleccion = Utilidades.pedirInt("Elige un plato para " + clientes.get(cliente));
+                    break;
+
+                case 1:
+                    for (int i = 0; i < menu.size(); i++) {
+                        System.out.println(i + " - " + menu.get(i).getNombre());
+                    }
+                    seleccion = Utilidades.pedirInt("Elige un plato para " + clientes.get(cliente));
+                    break;
+
+                default:
+                    System.out.println("ERROR: Número de cliente inválido");
+                    Utilidades.pausa();
+                    break;
+            }
+        } while (cliente < clientes.size());
+
+        return seleccion;
     }
 }
