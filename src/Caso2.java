@@ -16,9 +16,13 @@ public class Caso2 {
         int posicion;
         String queArray;
 
+        // Se unen los dos arrays en uno solo
         numerosOrdenados = numerosAdd(tamanoArray, numeros1, numeros2);
+        // Ordenamos el Array y buscamos el número más alto
         max = buscarNumeroAlto(numerosOrdenados);
+        // Buscamos ese número en los dos arrays originales
         posicion = buscarPosicionNumero(numeros1, numeros2, max);
+        //Lo volvemos a buscar y sacamos en qué array lo ha encontrado
         queArray = buscarArrayNumero(numeros1, numeros2, max);
         System.out.println("El número " + max + " está en la posición " + posicion + " del " + queArray);
 
