@@ -21,6 +21,7 @@ public class Caso3 {
         menu = addMenu();
         personas = addPersona();
         pedir(personas, menu, pedido);
+        System.out.println(pedido);
     }
 
     private static ArrayList<PlatoCaso3> addMenu() {
