@@ -19,7 +19,7 @@ public class Caso2 {
         max = buscarNumeroAlto(numerosOrdenados);
         posicion = buscarPosicionNumero(numeros1, numeros2, max);
         queArray = buscarArrayNumero(numeros1, numeros2, max);
-        System.out.println("el número " +max + " está en la posición " + posicion + " del " + queArray);
+        System.out.println("el número " + max + " está en la posición " + posicion + " del " + queArray);
 
     }
 
@@ -76,6 +76,7 @@ public class Caso2 {
         return posicion;
 
     }
+
     private static String buscarArrayNumero(int[] Array1, int[] Array2, int numero) {
 
         int longitud1 = Array1.length;
@@ -83,7 +84,7 @@ public class Caso2 {
         int i = 0;
         int posicion = -1;
         boolean encontrado = false;
-        boolean arrayEncontrado=false;
+        boolean arrayEncontrado = false;
         String queArray;
 
         if (longitud1 > 0) {
@@ -91,7 +92,7 @@ public class Caso2 {
                 if (Array1[i] == (numero)) {
                     posicion = i;
                     encontrado = true;
-                    arrayEncontrado=false;
+                    arrayEncontrado = false;
                 }
                 i++;
             } while (i < longitud1 && !encontrado);
@@ -104,18 +105,18 @@ public class Caso2 {
                     if (Array2[i] == numero) {
                         posicion = i + longitud1;
                         encontrado = true;
-                        arrayEncontrado=true;
+                        arrayEncontrado = true;
                     }
                     i++;
                 } while (i < longitud2 && !encontrado);
             }
         }
-        if (encontrado && !arrayEncontrado){
-            queArray ="Array 1";
-        }else if (encontrado && arrayEncontrado) {
-            queArray="Array 2";
-        }else{
-            queArray=null;
+        if (encontrado && !arrayEncontrado) {
+            queArray = "Array 1";
+        } else if (encontrado && arrayEncontrado) {
+            queArray = "Array 2";
+        } else {
+            queArray = null;
         }
         return queArray;
 
