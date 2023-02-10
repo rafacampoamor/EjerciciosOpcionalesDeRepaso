@@ -13,7 +13,6 @@ public class Utilidades {
 
 	public static int pedirInt(String texto) {
 		int numero = 0;
-		boolean valido = false;
 
 		Scanner lector = new Scanner(System.in);
 
@@ -23,6 +22,7 @@ public class Utilidades {
 			lector.nextLine();
 		}
 		numero = lector.nextInt();
+		lector.close();
 		return numero;
 	}
 
@@ -44,6 +44,7 @@ public class Utilidades {
 			lector.next();
 		}
 		cadena = lector.nextLine();
+		lector.close();
 		return cadena;
 	}
 
@@ -59,6 +60,7 @@ public class Utilidades {
 		Scanner lector = new Scanner(System.in);
 		System.out.println(texto);
 		caracter = lector.next().charAt(0);
+		lector.close();
 		return caracter;
 	}
 
@@ -81,6 +83,7 @@ public class Utilidades {
 			System.out
 					.println("La fecha introducida no es válida. Por favor, introduce una fecha en formato dd/MM/yyyy");
 		}
+		lector.close();
 		return fecha;
 	}
 
@@ -94,6 +97,7 @@ public class Utilidades {
 		Scanner lector = new Scanner(System.in);
 		System.out.println("\nPresiona ENTER para continuar...");
 		lector.nextLine();
+		lector.close();
 	}
 
 	/**
