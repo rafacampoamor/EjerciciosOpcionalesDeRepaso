@@ -64,6 +64,10 @@ public class Caso1 {
 
     }
 
+   /**
+    * Añade todas las letras a un ArrayList
+    * @return el ArrayList con todas las letras mayúsculas y minúsculas
+    */
     private static ArrayList<Character> InicioLetras() {
         ArrayList<Character> letras = new ArrayList<Character>();
         char[] arrayLetras = { 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k',
@@ -75,11 +79,14 @@ public class Caso1 {
         return letras;
     }
 
+    /**
+     * Añade todos los símbolos a un ArrayList
+     * @return el ArrayList con todos os símbolos
+     */
     private static ArrayList<Character> InicioSimbolos() {
         ArrayList<Character> simbolos = new ArrayList<Character>();
         char[] arrraySimbolos = { '!', '·', '$', '%', '&', '/', '=', '?', '¿', '^', '*', '¨', 'Ç', '|', '@', '#', '¢',
-                '∞',
-                '¬', '÷', '“', '”', '≠' };
+                '∞', '¬', '÷', '“', '”', '≠' };
         for (int i = 0; i < arrraySimbolos.length; i++) {
             simbolos.add(arrraySimbolos[i]);
         }
@@ -87,6 +94,10 @@ public class Caso1 {
 
     }
 
+    /**
+     * Añade todos los números a un ArrayList
+     * @return el ArrayList con todos los números
+     */
     private static ArrayList<Integer> InicioNumeros() {
         ArrayList<Integer> numeros = new ArrayList<Integer>();
         for (int i = 0; i < 10; i++) {
@@ -96,6 +107,10 @@ public class Caso1 {
 
     }
 
+    /**
+     * Define una longitud al azar entre 8 y 10
+     * @return la longitud definida
+     */
     private static int Longitud() {
         ArrayList<Integer> longitudLista = new ArrayList<Integer>();
         int[] longitudes = { 8, 9, 10 };
@@ -110,6 +125,10 @@ public class Caso1 {
 
     }
 
+    /**
+     * Elige al azar el tipo de caracter a usar entre letras, números y símbolos
+     * @return el tipo de caracter a utilizar
+     */
     private static ArrayList<String> tipos() {
         ArrayList<String> tipo = new ArrayList<String>();
         String[] tipoString = { "letra", "numero", "simbolo" };
