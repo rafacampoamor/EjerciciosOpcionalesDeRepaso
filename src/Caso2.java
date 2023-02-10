@@ -20,7 +20,7 @@ public class Caso2 {
         max = buscarNumeroAlto(numerosOrdenados);
         posicion = buscarPosicionNumero(numeros1, numeros2, max);
         queArray = buscarArrayNumero(numeros1, numeros2, max);
-        System.out.println("el número " + max + " está en la posición " + posicion + " del " + queArray);
+        System.out.println("El número " + max + " está en la posición " + posicion + " del " + queArray);
 
     }
 
