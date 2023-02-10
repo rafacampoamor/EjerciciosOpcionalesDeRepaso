@@ -119,15 +119,14 @@ public class Caso2 {
         int i = 0;
         int posicion = -1;
         boolean encontrado = false;
-        boolean arrayEncontrado = false;
-        String queArray;
+        String queArray="";
 
         if (longitud1 > 0) {
             do {
                 if (Array1[i] == (numero)) {
                     posicion = i;
                     encontrado = true;
-                    arrayEncontrado = false;
+                    queArray = "Array 1";
                 }
                 i++;
             } while (i < longitud1 && !encontrado);
@@ -140,19 +139,13 @@ public class Caso2 {
                     if (Array2[i] == numero) {
                         posicion = i + longitud1;
                         encontrado = true;
-                        arrayEncontrado = true;
+                        queArray = "Array 2";
                     }
                     i++;
                 } while (i < longitud2 && !encontrado);
             }
         }
-        if (encontrado && !arrayEncontrado) {
-            queArray = "Array 1";
-        } else if (encontrado && arrayEncontrado) {
-            queArray = "Array 2";
-        } else {
-            queArray = null;
-        }
+        
         return queArray;
 
     }
