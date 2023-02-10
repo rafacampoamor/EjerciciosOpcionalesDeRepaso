@@ -22,6 +22,13 @@ public class Caso3 {
         personas = addPersona();
         pedir(personas, menu, pedido);
         System.out.println(pedido);
+
+        /*
+         * Falta:
+         * 1. Evigtar que se pueda pedir más de una vez por cada uno
+         * 2. Sacar la suma de cada uno
+         * 3. Sacar la lista de platos bonita
+         */
     }
 
     private static ArrayList<PlatoCaso3> addMenu() {
