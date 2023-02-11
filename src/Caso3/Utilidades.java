@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-
 public class Utilidades {
 	/**
 	 * Solicita al usuario un entero por consola.
