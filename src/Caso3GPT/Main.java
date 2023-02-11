@@ -17,7 +17,7 @@ public class Main {
         restaurante.agregarPlatoMenu("Churros con Chocolate", 5.00);
         restaurante.agregarPlatoMenu("Flan Casero", 6.00);
         
-        System.out.println("Ingrese el nombre del cliente (Pepe o Lola) y el nombre del plato separados por una coma:");
+        System.out.println("Ingrese el nombre del cliente y el nombre del plato separados por una coma:");
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
             if (line.isEmpty()) {
