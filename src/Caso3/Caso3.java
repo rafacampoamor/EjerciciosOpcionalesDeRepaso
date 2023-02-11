@@ -1,7 +1,6 @@
 package Caso3;
+
 import java.util.ArrayList;
-
-
 
 public class Caso3 {
     public static void main(String[] args) {
@@ -24,16 +23,13 @@ public class Caso3 {
         menu = metodos.addMenu();
         personas = metodos.addPersona();
         metodos.pedir(personas, menu, pedido);
-        System.out.println(pedido);
+        metodos.ticket(pedido, personas);
 
         /*
          * Falta:
          * 1. Evitar que se pueda pedir más de una vez por cada uno
-         * 2. Sacar la suma de cada uno
-         * 3. Sacar la lista de platos bonita
          */
 
-        
     }
 
 }
