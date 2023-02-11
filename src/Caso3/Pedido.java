@@ -1,27 +1,27 @@
-
+package Caso3;
 
 public class Pedido {
-    private PersonaCaso3 persona;
-    private PlatoCaso3 plato;
+    private Persona persona;
+    private Plato plato;
     
-    public Pedido(PersonaCaso3 persona, PlatoCaso3 plato) {
+    public Pedido(Persona persona, Plato plato) {
         this.persona = persona;
         this.plato = plato;
     }
 
-    public PersonaCaso3 getPersona() {
+    public Persona getPersona() {
         return persona;
     }
 
-    public void setPersona(PersonaCaso3 persona) {
+    public void setPersona(Persona persona) {
         this.persona = persona;
     }
 
-    public PlatoCaso3 getPlato() {
+    public Plato getPlato() {
         return plato;
     }
 
-    public void setPlato(PlatoCaso3 plato) {
+    public void setPlato(Plato plato) {
         this.plato = plato;
     }
 

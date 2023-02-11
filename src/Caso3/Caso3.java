@@ -1,3 +1,4 @@
+package Caso3;
 import java.util.ArrayList;
 
 public class Caso3 {
@@ -14,8 +15,8 @@ public class Caso3 {
          * Lola: 120,02€ (plato1 de Lola, plato2 de Lola, plato3 de Lola).
          */
 
-        ArrayList<PlatoCaso3> menu = new ArrayList<PlatoCaso3>();
-        ArrayList<PersonaCaso3> personas = new ArrayList<PersonaCaso3>();
+        ArrayList<Plato> menu = new ArrayList<Plato>();
+        ArrayList<Persona> personas = new ArrayList<Persona>();
         ArrayList<Pedido> pedido = new ArrayList<Pedido>();
 
         menu = addMenu();
@@ -37,17 +38,17 @@ public class Caso3 {
      * Inicializa la lista del menu
      * @return devuelve un Arraylist con el menú relleno
      */
-    private static ArrayList<PlatoCaso3> addMenu() {
-        ArrayList<PlatoCaso3> menu = new ArrayList<PlatoCaso3>();
-        menu.add(new PlatoCaso3("Spaghetti", 30));
-        menu.add(new PlatoCaso3("Sopa", 25));
-        menu.add(new PlatoCaso3("Ensalada", 20));
-        menu.add(new PlatoCaso3("Pollo", 25));
-        menu.add(new PlatoCaso3("Pescado", 27));
-        menu.add(new PlatoCaso3("Ternera", 33));
-        menu.add(new PlatoCaso3("Pudding", 15));
-        menu.add(new PlatoCaso3("Helado", 14));
-        menu.add(new PlatoCaso3("Fruta", 9));
+    private static ArrayList<Plato> addMenu() {
+        ArrayList<Plato> menu = new ArrayList<Plato>();
+        menu.add(new Plato("Spaghetti", 30));
+        menu.add(new Plato("Sopa", 25));
+        menu.add(new Plato("Ensalada", 20));
+        menu.add(new Plato("Pollo", 25));
+        menu.add(new Plato("Pescado", 27));
+        menu.add(new Plato("Ternera", 33));
+        menu.add(new Plato("Pudding", 15));
+        menu.add(new Plato("Helado", 14));
+        menu.add(new Plato("Fruta", 9));
 
         return menu;
     }
@@ -56,11 +57,11 @@ public class Caso3 {
      * Inicializa la lista de personas con Lola y Pepe
      * @return devuelve un Arraylist con las dos personas
      */
-    private static ArrayList<PersonaCaso3> addPersona() {
-        ArrayList<PersonaCaso3> personas = new ArrayList<PersonaCaso3>();
+    private static ArrayList<Persona> addPersona() {
+        ArrayList<Persona> personas = new ArrayList<Persona>();
 
-        personas.add(new PersonaCaso3("Pepe"));
-        personas.add(new PersonaCaso3("Lola"));
+        personas.add(new Persona("Pepe"));
+        personas.add(new Persona("Lola"));
 
         return personas;
 
@@ -72,7 +73,7 @@ public class Caso3 {
      * @param menu listado de platos del menú
      * @param pedido listado dónde se almacenan los pedidos de cada persona
      */
-    private static void pedir(ArrayList<PersonaCaso3> personas, ArrayList<PlatoCaso3> menu, ArrayList<Pedido> pedido) {
+    private static void pedir(ArrayList<Persona> personas, ArrayList<Plato> menu, ArrayList<Pedido> pedido) {
         int seleccion;
         do {
             System.out.println("Quién pide?");
@@ -94,7 +95,7 @@ public class Caso3 {
      * @param clientes listado de clientes
      * @param pedido listado donde se almacenan los pedidos de cada persona
      */
-    private static void elegirPlato(int cliente, ArrayList<PlatoCaso3> menu, ArrayList<PersonaCaso3> clientes,
+    private static void elegirPlato(int cliente, ArrayList<Plato> menu, ArrayList<Persona> clientes,
             ArrayList<Pedido> pedido) {
         int seleccion;
 

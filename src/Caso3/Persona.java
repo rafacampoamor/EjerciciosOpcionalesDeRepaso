@@ -1,8 +1,9 @@
+package Caso3;
 
-public class PersonaCaso3 {
+public class Persona {
     private String nombre;
 
-    public PersonaCaso3(String nombre) {
+    public Persona(String nombre) {
         this.nombre = nombre;
     }
 

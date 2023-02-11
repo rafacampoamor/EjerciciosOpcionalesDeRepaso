@@ -1,5 +1,6 @@
+package Caso3;
 
-public class PlatoCaso3 {
+public class Plato {
     private String nombre;
     private int precio;
 
@@ -7,7 +8,7 @@ public class PlatoCaso3 {
      * @param nombre
      * @param precio
      */
-    public PlatoCaso3(String nombre, int precio) {
+    public Plato(String nombre, int precio) {
         this.nombre = nombre;
         this.precio = precio;
     }
