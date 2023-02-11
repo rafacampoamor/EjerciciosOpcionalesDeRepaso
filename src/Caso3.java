@@ -25,12 +25,18 @@ public class Caso3 {
 
         /*
          * Falta:
-         * 1. Evigtar que se pueda pedir más de una vez por cada uno
+         * 1. Evitar que se pueda pedir más de una vez por cada uno
          * 2. Sacar la suma de cada uno
          * 3. Sacar la lista de platos bonita
          */
+
+        
     }
 
+    /**
+     * Inicializa la lista del menu
+     * @return devuelve un Arraylist con el menú relleno
+     */
     private static ArrayList<PlatoCaso3> addMenu() {
         ArrayList<PlatoCaso3> menu = new ArrayList<PlatoCaso3>();
         menu.add(new PlatoCaso3("Spaghetti", 30));
@@ -46,6 +52,10 @@ public class Caso3 {
         return menu;
     }
 
+    /**
+     * Inicializa la lista de personas con Lola y Pepe
+     * @return devuelve un Arraylist con las dos personas
+     */
     private static ArrayList<PersonaCaso3> addPersona() {
         ArrayList<PersonaCaso3> personas = new ArrayList<PersonaCaso3>();
 
@@ -56,6 +66,12 @@ public class Caso3 {
 
     }
 
+    /**
+     * Formulario de selección de cliente e inicio de pedido
+     * @param personas listado de clientes
+     * @param menu listado de platos del menú
+     * @param pedido listado dónde se almacenan los pedidos de cada persona
+     */
     private static void pedir(ArrayList<PersonaCaso3> personas, ArrayList<PlatoCaso3> menu, ArrayList<Pedido> pedido) {
         int seleccion;
         do {
@@ -71,6 +87,13 @@ public class Caso3 {
 
     }
 
+    /**
+     * Formulario de selección de platos para cada cliente
+     * @param cliente el índice del cliente que está pidiendo
+     * @param menu listado de platos del menú
+     * @param clientes listado de clientes
+     * @param pedido listado donde se almacenan los pedidos de cada persona
+     */
     private static void elegirPlato(int cliente, ArrayList<PlatoCaso3> menu, ArrayList<PersonaCaso3> clientes,
             ArrayList<Pedido> pedido) {
         int seleccion;
