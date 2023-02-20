@@ -27,6 +27,28 @@ public class Utilidades {
 	}
 
 	/**
+	 * Solicita al usuario un float por consola.
+	 *
+	 * @param texto el texto a mostrar al solicitar el número
+	 * @return el float ingresado por el usuario
+	 */
+
+	 public static float pedirFloat(String texto) {
+		float numero = 0f;
+
+		System.out.println(texto);
+		Scanner lector = new Scanner(System.in);
+
+		
+		while (!lector.hasNextInt()) {
+			System.out.println("Por favor ingresa un número entero válido.");
+			lector.nextLine();
+		}
+		numero = lector.nextInt();
+		return numero;
+	}
+
+	/**
 	 * Pide al usuario que introduzca una cadena de caracteres por consola y la
 	 * devuelve.
 	 *

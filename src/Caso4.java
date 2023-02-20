@@ -27,6 +27,7 @@ public class Caso4 {
 
     /**
      * Recibe un String y verifica que se trate de una fecha en formato dd/mm/aaaa
+     * (este método está reutilizado del simulacro de examen, con pequeñas variaciones)
      * @param fecha El String a comprobar
      * @return devuelve un booleano comprobando si es válido o no
      */
