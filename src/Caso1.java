@@ -32,42 +32,47 @@ public class Caso1 {
         simbolos = InicioSimbolos();
         tipo = tipos();
 
-        // Establecer largo de lista al azar
-        longitud = Longitud();
+        System.out.println("");
 
-        // Incio bucle contraseña
-
-        for (int i = 0; i < longitud; i++) {
-            Collections.shuffle(tipo);
-            tipoActual = tipo.get(0);
-            switch (tipoActual) {
-                case "letra":
-                    Collections.shuffle(letras);
-                    password.add(String.valueOf(letras.get(0)));
-                    break;
-                case "numero":
-                    Collections.shuffle(numeros);
-                    password.add(String.valueOf(numeros.get(0)));
-                    break;
-                case "simbolo":
-                    Collections.shuffle(simbolos);
-                    password.add(String.valueOf(simbolos.get(0)));
-                    break;
-                default:
-                    break;
+        for (int i = 0; i < 3; i++) {
+            // Establecer largo de lista al azar
+            longitud = Longitud();
+            // Incio bucle contraseña
+            for (int j = 0; j < longitud; j++) {
+                Collections.shuffle(tipo);
+                tipoActual = tipo.get(0);
+                switch (tipoActual) {
+                    case "letra":
+                        Collections.shuffle(letras);
+                        password.add(String.valueOf(letras.get(0)));
+                        break;
+                    case "numero":
+                        Collections.shuffle(numeros);
+                        password.add(String.valueOf(numeros.get(0)));
+                        break;
+                    case "simbolo":
+                        Collections.shuffle(simbolos);
+                        password.add(String.valueOf(simbolos.get(0)));
+                        break;
+                    default:
+                        break;
+                }
             }
+
+            // impresion por pantalla de la password
+
+            System.out.println("Password: " + String.join("", password));
+            password.clear();
+
         }
-
-        // impresion por pantalla de la password
-
-        System.out.println("Password: " + String.join("", password));
-
+        System.out.println("");
     }
 
-   /**
-    * Añade todas las letras a un ArrayList
-    * @return el ArrayList con todas las letras mayúsculas y minúsculas
-    */
+    /**
+     * Añade todas las letras a un ArrayList
+     * 
+     * @return el ArrayList con todas las letras mayúsculas y minúsculas
+     */
     private static ArrayList<Character> InicioLetras() {
         ArrayList<Character> letras = new ArrayList<Character>();
         char[] arrayLetras = { 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k',
@@ -81,6 +86,7 @@ public class Caso1 {
 
     /**
      * Añade todos los símbolos a un ArrayList
+     * 
      * @return el ArrayList con todos os símbolos
      */
     private static ArrayList<Character> InicioSimbolos() {
@@ -96,6 +102,7 @@ public class Caso1 {
 
     /**
      * Añade todos los números a un ArrayList
+     * 
      * @return el ArrayList con todos los números
      */
     private static ArrayList<Integer> InicioNumeros() {
@@ -109,6 +116,7 @@ public class Caso1 {
 
     /**
      * Define una longitud al azar entre 8 y 10
+     * 
      * @return la longitud definida
      */
     private static int Longitud() {
@@ -127,6 +135,7 @@ public class Caso1 {
 
     /**
      * Elige al azar el tipo de caracter a usar entre letras, números y símbolos
+     * 
      * @return el tipo de caracter a utilizar
      */
     private static ArrayList<String> tipos() {
